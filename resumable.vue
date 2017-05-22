@@ -19,7 +19,7 @@
                     {{Math.floor(file.progress() * 100) + '%'}}
                 </span>
                 <span style="position:absolute;right:40px">{{file.size | size}}</span>
-                <a style="position:absolute;right:5px;" @click="removeFile(file)">X</a>
+                <el-button style="position:absolute;right:5px;" @click="removeFile(file)">X</el-button>
             </ul>
             <li v-show="!file.load" :class="'resumable-progress-' + file.uniqueIdentifier" style="height:25px;margin-top:5px">
                 <table>
@@ -65,7 +65,7 @@
     }
 </style>
 
-<script type="text/babel">
+<script>
     export default {
         data() {
             return {
