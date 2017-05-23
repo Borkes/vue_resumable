@@ -90,9 +90,6 @@
                 type: String,
                 required: true
             },
-            clear: {             //清除上传列表
-                type: Boolean
-            },
             fileList: {           //已经上传过的文件显示
                 type: Array,
                 default: () => []
@@ -129,8 +126,12 @@
             }
         },
         watch: {
-            clear() {
-                this.fileList = [];
+            fileList(newValue, oldValue) {
+                if (newValue.length === 0) {
+                    for (let i = 0; i < oldValue.length; i++) {
+                        oldValue[i].cancel()
+                    }
+                }
             }
         },
         mounted() {
