@@ -22,7 +22,7 @@
                     <el-button style="position:absolute;right:5px;" @click="removeFile(file)" type="text">X</el-button>
                 </li>
                 <li v-show="!file.load" :class="'resumable-progress-' + file.uniqueIdentifier" style="height:25px;margin-top:5px">
-                    <table>
+                    <table width="100%">
                         <tr>
                             <td width="80%" style="vertical-align:middle">
                                 <div class="progress-container">
